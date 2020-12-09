@@ -10,20 +10,20 @@ alias ll="ls -lahG"
 alias vim="nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# the number of commands to remember in the command history (the default value is 500).
-export HISTSIZE=10000
-# the maximum number of lines contained in the history file (the default value is 500).
-export HISTFILESIZE=10000
-
+## History configuration
 # To append commands to the history file, rather than overwrite it, add the following line to ~/.bashrc:
 shopt -s histappend
-
+# the number of commands to remember in the command history (the default value is 500).
+HISTSIZE=100000
+# the maximum number of lines contained in the history file (the default value is 500).
+HISTFILESIZE=10000000
 # By default, Bash only records a session to the .bash_history file when the session terminates.
-PROMPT_COMMAND='history -a'
-#PROMPT_COMMAND='$PROMPT_COMMAND; history -a'
-
+# append and reload the history after each command
+PROMPT_COMMAND="history -a; history -n"
 # Don't store commands starting with space + remove duplicate commands
-export HISTCONTROL=ignorespace:erasedups
+HISTCONTROL=ignorespace:erasedups
+# Don't keep in history those commands that aren't useful
+HISTIGNORE='ls:ll:cd:pwd:bg:fg:history'
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
@@ -39,3 +39,9 @@ fi
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+if [ "$BASH" ]; then
+    . ~/.profile
+fi
+
+export ANSIBLE_CONFIG=$HOME/.ansible.cfg

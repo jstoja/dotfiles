@@ -8,6 +8,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " GUI
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 
 " Fuzzy Finder
 Plug 'airblade/vim-rooter'
@@ -23,6 +24,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
+
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
 
 "if exists('+termguicolors')
