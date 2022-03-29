@@ -8,7 +8,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " GUI
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 " Fuzzy Finder
 Plug 'airblade/vim-rooter'
