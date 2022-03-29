@@ -34,7 +34,7 @@ if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
 	source "${VIRTUAL_ENV}/bin/activate"
 fi
 
-source ~/.secrets
+[ -f .secrets ] && source ~/.secrets
 
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
